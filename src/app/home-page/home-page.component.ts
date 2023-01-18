@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../User';
 import { UserService } from '../user.service';
 
 @Component({
@@ -7,7 +8,12 @@ import { UserService } from '../user.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
-
+  user!: User;
+  selectedUser?: User;
+  onSelect(user: User): void {
+    this.selectedUser = user;
+  }
+ 
 users:any;
 constructor(private userserve: UserService) { }
 
@@ -16,6 +22,8 @@ this.userserve.getUsers().subscribe(
 (response) => { this.users = response; },
 (error) => { console.log(error); });
 
-
+  
 }
+
+
 }

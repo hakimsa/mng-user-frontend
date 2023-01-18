@@ -7,5 +7,7 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
-<router-outlet></router-outlet>
+<app-navbar></app-navbar> 
+<div [@routeAnimation]="getAnimationData()">
+    <router-outlet></router-outlet>
+  </div>

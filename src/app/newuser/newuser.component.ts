@@ -1,6 +1,7 @@
 import { JitEvaluator } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
+import { __values } from 'tslib';
 import { User } from '../User';
 import { UserService } from '../user.service';
 
@@ -10,37 +11,87 @@ import { UserService } from '../user.service';
   styleUrls: ['./newuser.component.css']
 })
 export class NewuserComponent {
-  users:any;
+
+
+
+  selectList: SelectListItem[] = [];
+clear() {
+  this.resetCheckBox()
+  this.userserve.clear()
+
+
+
+}
+
+  user:any;
+  users: User[] | any;
+  list: any[] = [];
   constructor(private userserve: UserService) { }
-  isChecked:boolean = false;
-addUserr(name: string,email :String, op:String []) {
-  var element = <HTMLInputElement> document.getElementById("flexSwitchCheckChecked");
-var isChecked = element.checked;
-if(isChecked==true){
-  op[0]="Dart"
-  op[1]="Java"
-  op[2]="Python"
-  op[3]="LangGo"
-  console.log(name,op ,email)
-}else {
-  console.log("No checke¡d:"+ name,email,op)
-}
 
-
-}
+  
 
 
 
+add(name: string,email: string,favorit: string[]) {
+  name = name.trim();
+  email = email.trim();
+ favorit= favorit
 
- /*aaddnewUser(names: string,email:String,program:String[]) {
-this.userserve.addnewUser().subscribe(
-    (response) => { console.log(response) },
-    (error) => { console.log(names+email,program); });
-throw new Error('Method not implemented.');}*/
-/** POST: add a new hero to the database */
+
+  if (!name) { 
+    return; 
+  }
+;
+if(this.getSelectedItem()!=null){
+  favorit.forEach((value:any , key: any) => {//worked
+
+    favorit.push(value.text)
+})
+
+console.log( favorit);
+  this.userserve.addUser({ name, email, favorit } as unknown  as User)
+console.log( name);
+console.log( email);
+
+
+  
+}}
+
+
 
   ngOnInit() {
-   
+  this.selectList.push({ value: '1', text: 'Dart', checked: false });
+  this.selectList.push({ value: '2', text: 'Java', checked: false });
+  this.selectList.push({ value: '3', text: 'Python', checked: false });
+  this.selectList.push({ value: '4', text: 'C#', checked: false });
+  this.selectList.push({ value: '5', text: 'Perl', checked: false });
+  this.selectList.push({ value: '6', text: 'C++', checked: false });
     
     }
+
+ // get list of selected Items
+ getSelectedItem() {
+
+ this.list=this.selectList.filter(item => item.checked === true);
+
+
+  return this.list;
 }
+
+
+// reset list
+resetCheckBox() {
+ 
+this.selectList.forEach(item => {
+  const foundIndex = this.selectList.findIndex(x => x.value === item.value);
+  item.checked = false;
+  this.selectList[foundIndex] = item;
+});
+}
+
+}
+export interface SelectListItem {
+  value: string;
+  text: string;
+  checked: boolean;
+ }

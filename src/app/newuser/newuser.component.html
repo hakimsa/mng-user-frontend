@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="container">
-        <br>
+        
      
 
       <div class="card">
@@ -31,36 +31,43 @@
             <form   #heroForm="ngForm"class="row g-3">
                 <div class="col-md-4">
                   <label for="validationDefault01" class="form-label">First name</label>
-                  <input   #name type="text" class="form-control" id="validationDefault01" value="" required>
+                  <input   #name  name="name" type="text" class="form-control" id="validationUsername" required>
                 </div>
              
                 <div class="col-md-4">
                   <label for="validationDefaultUsername" class="form-label">Email</label>
                   <div class="input-group">
                     <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                    <input  #email email="email" type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                    <input  #email email="email" type="text" class="form-control" id="validationUseremail"  aria-describedby="inputGroupPrepend2" required>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <label for="validationDefault03" class="form-label">City</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <label for="validationDefault03" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="validationUserlastname" required>
                 </div>
                 <div class="col-md-3">
                     <div class="form-check form-switch">
-                        <input #op class="form-check-input"   value="Dart "type="checkbox" id="flexSwitchCheckChecked">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Dart</label>
-                      </div>
-                      <div class="form-check form-switch">
-                        <input #op1  class="form-check-input"   value="Java "type="checkbox" id="flexSwitchCheckChecked" >
-                        <label class="form-check-label" for="flexSwitchCheckChecked">Java</label>
-                      </div>
-                      <div class="form-check form-switch">
-                        <input #op2 class="form-check-input"  value="Python" type="checkbox" id="flexSwitchCheckChecked" >
-                        <label class="form-check-label" for="flexSwitchCheckChecked">Python</label>
-                      </div>
-                      <div class="form-check form-switch">
-                        <input #op3  class="form-check-input" value="Javascript"  type="checkbox" id="flexSwitchCheckChecked" >
-                        <label class="form-check-label" for="flexSwitchCheckChecked">JavaScript</label>
+                       
+
+                        <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>
+                                      <p>preferred programming language</p>
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let item of selectList; let i=index;">
+                                  <td>
+                                      <input class="form-check-input" name="off" type="checkbox" [(ngModel)]="item.checked">
+                                      <label class="form-check-label">
+                                        {{item.text}}
+                                      </label>
+                                  </td>
+                              </tr>
+                          </tbody>
+                        </table>
                       </div>
                       
                 </div>
@@ -75,14 +82,33 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <button  (click)="addUserr(name.value,email.value,[op.value,op1.value,op2.value,op3.value])"class="btn btn-primary" type="submit">Validar</button>
+
+                  
+                
+
+                  <div class="col-12">
+                    <div class="row">
+                   
+                      <div class="col-sm-3 col-md-6">
+              
+                        <button  id="btnv" (click)="add(name.value,email.value,getSelectedItem())"type="button" class="btn btn-outline-success"><img src="https://icons.iconarchive.com/icons/icojam/blue-bits/48/user-check-icon.png" alt="delete_image">Validar</button>
+               
+                      </div>
+                      <div class="col-sm-9 col-md-6">
+                        <button   id="btnv"  (click)="clear()"type="button" class="btn btn-outline-success"><img src="https://icons.iconarchive.com/icons/seanau/email/48/Clear-icon.png" alt="delete_image">Clear</button>
+                      </div>
+                </div>
+                  </div>
                 </div>
               </form>
         </div>
+        
       </div>
+
+      
     </div>
 
 
-  
+    
 </body>
 </html>
