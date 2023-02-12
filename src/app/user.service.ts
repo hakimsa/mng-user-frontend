@@ -23,7 +23,7 @@ lastname.value=""
 
   
 
-  private usersUrl ='http://localhost:8080/api/v1/users';
+  private usersUrl ='http://localhost:8090/api/v1/users';
   private  httpOptions = new HttpHeaders({ 'Content-Type': 'application/json' })
   status: any;
   
@@ -82,6 +82,62 @@ updateUser(user:User) {
  var favoritPrograming= <HTMLButtonElement>document.getElementById("user-favorit");
  favoritPrograming.style.color="gray";
  favoritPrograming.disabled = false;
+
+ var avatar= <HTMLButtonElement>document.getElementById("user-avatar");
+ avatar.style.color="gray";
+ avatar.disabled = false;
+ 
+ var avatar= <HTMLButtonElement>document.getElementById("user-avatar");
+ avatar.style.color="gray";
+ avatar.disabled = false;
+
+
+ var lenguage= <HTMLButtonElement>document.getElementById("user-lenguage");
+ lenguage.style.color="gray";
+ lenguage.disabled = false;
+
+ var role= <HTMLButtonElement>document.getElementById("user-role");
+ role.style.color="gray";
+ role.disabled = false;
+ 
+ var token= <HTMLButtonElement>document.getElementById("user-token");
+ token.style.color="gray";
+ token.disabled = false;
+
+ var redes= <HTMLButtonElement>document.getElementById("user-redes");
+ redes.style.color="gray";
+ redes.disabled = false;
+
+ var telefon= <HTMLButtonElement>document.getElementById("user-telefon");
+ telefon.style.color="gray";
+ telefon.disabled = false;
+
+ var password= <HTMLButtonElement>document.getElementById("user-password");
+ password.style.color="gray";
+ password.disabled = false;
+
+ var nacion= <HTMLButtonElement>document.getElementById("user-nacion");
+ nacion.style.color="gray";
+ nacion.disabled = false;
+
+ var formacion= <HTMLButtonElement>document.getElementById("user-formacion");
+ formacion.style.color="gray";
+ formacion.disabled = false;
+
+ var description= <HTMLButtonElement>document.getElementById("user-description");
+ description.style.color="gray";
+ description.disabled = false;
+
+ var age= <HTMLButtonElement>document.getElementById("user-age");
+ age.style.color="gray";
+ age.disabled = false;
+
+ var addess= <HTMLButtonElement>document.getElementById("user-addess");
+ addess.style.color="gray";
+ addess.disabled = false;
+
+
+
  var btnvalidar= <HTMLButtonElement>document.getElementById("btnvalidar");
  btnvalidar.style.color="red";
  btnvalidar.disabled = false;

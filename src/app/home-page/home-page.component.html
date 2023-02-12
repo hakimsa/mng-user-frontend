@@ -28,9 +28,11 @@
         <div class="card" *ngFor="let user of users">
             <div class="card-body" routerLink="/details/{{user.id}}">
                 <div>
+                    <div id="avatar" style="background-image:url({{user.avatar}}  );"alt="avatar"></div>
+   
                     <li>
 
-                        <span style="font-size: 20px;text-align: center;">{{user.name}}
+                        <span style="font-size: 20px;text-align: center;">{{user.firstname}} {{user.lastname}}
                         </span>
 
 
@@ -41,6 +43,25 @@
                         </span>
 
                     </li>
+                    <li>
+
+                        <span style="font-size: 20px;text-align: center;">{{user.role}}
+                        </span>
+
+                    </li>
+                    <li>
+
+                        <span style="font-size: 20px;text-align: center;">{{user.nacion}}
+                        </span>
+
+                    </li>
+                    <li>
+
+                        <span style="font-size: 20px;text-align: center;">{{user.lenguage}}
+                        </span>
+
+                    </li>
+                 
                     <span id="prog" class="badge bg-success" *ngFor="let pro of user.favoritPrograming">{{pro}}</span>
                     <br>
 

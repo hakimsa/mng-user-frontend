@@ -24,11 +24,10 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
     
   ],
   imports: [
-    BrowserAnimationsModule,
+
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserModule,
     FormsModule
   ],
   providers: [],

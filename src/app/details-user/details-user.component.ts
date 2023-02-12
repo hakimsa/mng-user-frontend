@@ -40,9 +40,7 @@ throw new Error('Method not implemented.');
 this.userserve.update();
 
   }
-  updateUser(){
-    this.userserve.updateUser(this.user)
-;  }
+
 
 save(): void {
   if (this.user) {

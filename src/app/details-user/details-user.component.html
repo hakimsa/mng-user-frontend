@@ -32,32 +32,93 @@
         <div id="addHere"></div>
         <div  *ngIf="user"  class="card-body">
          
-        
-                <div class="col-md-4">
+          <div class="col-12">
+            <div class="row">
 
-                  <h2>{{user.name | uppercase}} Details    <a (click)="update()" class="btn btn-info btn-lg">
-                    <img src="https://icons.iconarchive.com/icons/fatcow/farm-fresh/32/user-edit-icon.png"> 
-                    Update
-                  </a>
-                </h2>  
-                  <div><span>id: </span>{{user.id}}</div>
-                  <label  class="form-label">First name</label>
-                  <input id="user-name" [(ngModel)]="user.name" placeholder="User name" class="form-control" disabled >
+              <div class="col-md-4">
+
+                <h3>{{user.firstname + user.lastname| uppercase}}     <a (click)="update()" class="btn btn-info btn-lg">
+                  <img src="https://icons.iconarchive.com/icons/fatcow/farm-fresh/32/user-edit-icon.png"> 
+                  Update
+                </a>
+              </h3>  
+                <div><span>id: </span><strong>{{user.id}}</strong></div>
+                <label  class="form-label">First name</label>
+                <input id="user-name" [(ngModel)]="user.firstname" placeholder="User firstname" class="form-control" disabled >
+
+                  <label  class="form-label">Last name</label>
+                <input id="user-lastname" [(ngModel)]="user.lastname" placeholder="User Lastname" class="form-control" disabled >
+              </div>
+              
+              <div class="col-md-4">
+                <label  class="form-label">Email</label>
+                <div class="input-group">
+                  <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                  <input id="user-email" [(ngModel)]="user.email" placeholder="User email" class="form-control" disabled>
                 </div>
-             
-                <div class="col-md-4">
-                  <label  class="form-label">Email</label>
-                  <div class="input-group">
-                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                    <input id="user-email" [(ngModel)]="user.email" placeholder="User email" class="form-control" disabled>
-                  </div>
+              </div>
+              <div class="col-md-4">
+                <label  class="form-label">avatar</label>
+                <div class="input-group">
+                  <span class="input-group-text" id="inputGroupPrepend2"><img src={{user.avatar}} width="20" alt=""></span>
+                  <input id="user-avatar" [(ngModel)]="user.avatar" placeholder="User avatar" class="form-control" disabled >
                 </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">favoritPrograming</label>
+                <input id="user-favorit" [(ngModel)]="user.favoritPrograming" placeholder="User favoritPrograming" class="form-control" disabled>
+              </div>
+              
+              
+            </div></div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-sm-3 col-md-6">
+ 
                 <div class="col-md-6">
-                  <label class="form-label">favoritPrograming</label>
-                  <input id="user-favorit" [(ngModel)]="user.favoritPrograming" placeholder="User favoritPrograming" class="form-control" disabled>
-                </div>
+                  <label class="form-label">Addess</label>
+                  <input id="user-addess" [(ngModel)]="user.addess" placeholder="User addess" class="form-control" disabled>
+
+                  <label class="form-label">Age</label>
+                  <input id="user-age" [(ngModel)]="user.age" placeholder="User age" class="form-control" disabled>
+                
+                  <label class="form-label">Description</label>
+                  <input id="user-description" [(ngModel)]="user.description" placeholder="User description" class="form-control" disabled>
+                 
+                  <label class="form-label">Nacion</label>
+                  <input id="user-nacion" [(ngModel)]="user.nacion" placeholder="User nacion" class="form-control" disabled>
              
-            
+                  <label class="form-label">Role</label>
+                  <input id="user-role" [(ngModel)]="user.role" placeholder="User role" class="form-control" disabled>
+                 
+                  <label class="form-label">Telefone</label>
+                  <input id="user-telefon" [(ngModel)]="user.telefon" placeholder="User favoritPrograming" class="form-control" disabled>
+             
+                </div>
+       
+              </div>
+              <div class="col-sm-9 col-md-6">
+                <div class="col-md-6">
+                  <label class="form-label">Token</label>
+                  <input id="user-token" type=password  [(ngModel)]="user.token" placeholder="User token" class="form-control" disabled>
+                 
+                  <label class="form-label">Password</label>
+                  <input id="user-password" type=password [(ngModel)]="user.password" placeholder="User password" class="form-control" disabled>
+                  
+                  
+                  <label class="form-label">Formacion</label>
+                  <input id="user-formacion" [(ngModel)]="user.formacion" placeholder="User formacion" class="form-control" disabled>
+                  
+                  <label class="form-label">Lenguage</label>
+                  <input id="user-lenguage" [(ngModel)]="user.lenguage" placeholder="User lenguage" class="form-control" disabled>
+                  
+                  <label class="form-label">Redes</label>
+                  <input id="user-redes" [(ngModel)]="user.redes" placeholder="User redes" class="form-control" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+         
                 <div class="col-12">
                   <div class="row">
                  
@@ -84,3 +145,6 @@
 
 </body>
 </html>
+
+
+

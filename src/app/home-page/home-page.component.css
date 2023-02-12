@@ -40,3 +40,16 @@ position: relative;
 left:300px;
 
 }
+
+#avatar{
+
+  width: 130px;
+  height: 130px;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 200px;
+  background-attachment: scroll;
+  background-color: aqua;
+
+}

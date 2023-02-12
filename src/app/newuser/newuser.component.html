@@ -21,94 +21,163 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
+
     <div class="container">
-        
-     
 
-      <div class="card">
-        <div class="card-body">
-          
-            <form   #heroForm="ngForm"class="row g-3">
-                <div class="col-md-4">
-                  <label for="validationDefault01" class="form-label">First name</label>
-                  <input   #name  name="name" type="text" class="form-control" id="validationUsername" required>
-                </div>
+    
+         
+          <div class="col-12">
+            <div class="row">
+
+           
+
+              <form   #UserForm="ngForm">
+
+                <div class="card">
+                 
+                  <div  class="card-body">
+               
              
-                <div class="col-md-4">
-                  <label for="validationDefaultUsername" class="form-label">Email</label>
-                  <div class="input-group">
-                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                    <input  #email email="email" type="text" class="form-control" id="validationUseremail"  aria-describedby="inputGroupPrepend2" required>
-                  </div>
+              
+              <div class="col-md-4">
+                <div class="input-group">
+                <label class="input-group-text" >Avatar</label>
+                <input id="user-avatar" #avatar  avatar="avatar"  placeholder="Url image" class="form-control"  >
                 </div>
-                <div class="col-md-6">
-                  <label for="validationDefault03" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="validationUserlastname" required>
+                <label  class="form-label">Email</label>
+                <div class="input-group">
+                  <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                  <input id="user-email" #email  email="email"  placeholder="User email" class="form-control" >
                 </div>
-                <div class="col-md-3">
-                    <div class="form-check form-switch">
-                       
-
-                        <table class="table">
-                          <thead>
-                              <tr>
-                                  <th>
-                                      <p>preferred programming language</p>
-                                  </th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr *ngFor="let item of selectList; let i=index;">
-                                  <td>
-                                      <input class="form-check-input" name="off" type="checkbox" [(ngModel)]="item.checked">
-                                      <label class="form-check-label">
-                                        {{item.text}}
-                                      </label>
-                                  </td>
-                              </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      
+              </div>
+              <div class="col-md-4">
+                <label  class="form-label">First name</label>
+                <div class="input-group">
+                  <span class="input-group-text" id="inputGroupPrepend2"></span>
+                  <input id="user-firstname" #firstname  firstname="name" placeholder="User firstname" class="form-control"  >
                 </div>
-            
-                <div class="col-12">
-                  
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                    <label class="form-check-label" for="invalidCheck2">
-                      Agree to terms and conditions
-                    </label>
-                  </div>
+                <label  class="form-label">Last name</label>
+                <div class="input-group">
+                  <span class="input-group-text" id="inputGroupPrepend2"></span>
+                  <input id="user-lastname" #lastname  lastname="lastname" placeholder="User lastname" class="form-control"  >
                 </div>
-                <div class="col-12">
-
-                  
+              </div>
+              <div class="col-md-6">
+        
+                <div class="form-check form-switch">
+                  <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <p>preferred programming language</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of selectList; let i=index;">
+                            <td>
+                                <input class="form-check-input" name="off" type="checkbox" [(ngModel)]="item.checked">
+                                <label class="form-check-label">
+                                  {{item.text}}
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
                 
+              </div>
+              
+
+          <div class="col-12">
+            <div class="row">
+              <div class="col-sm-3 col-md-6">
+ 
+                <div class="col-md-6">
+                  <label class="form-label">Addess</label>
+                  <input id="user-addess"  #addess  addess="addess" placeholder="User addess" class="form-control" >
+
+                  <label class="form-label">Age</label>
+                  <input id="user-age"  #age  age="age"placeholder="User age" class="form-control" >
+                
+                  <label class="form-label">Description</label>
+                  <input id="user-description"  #description  description="description" placeholder="User description" class="form-control">
+                 
+                  <label class="form-label">Nacion</label>
+                  <input id="user-nacion" #nacion  nacion="nacion" placeholder="User nacion" class="form-control" >
+             
+                  <label class="form-label">Role</label>
+                  <input id="user-role" #role  role="role" placeholder="User role" class="form-control" >
+                 
+                  <label class="form-label">Telefone</label>
+                  <input id="user-telefon" #telefon  telefon="telefon" placeholder="User telefon" class="form-control" >
+             
+                </div>
+       
+              </div>
+              <div class="col-sm-9 col-md-6">
+                <div class="col-md-6">
+                  <label class="form-label">Token</label>
+                  <input id="user-token" type=password   #token  token="token" placeholder="User token" class="form-control" >
+                 
+                  <label class="form-label">Password</label>
+                  <input id="user-password" type=password #password  password="password"  placeholder="User password" class="form-control" >
+                  
+                  
+                  <label class="form-label">Formacion</label>
+                  <input id="user-formacion"  #formacion  formacion="formacion" placeholder="User formacion" class="form-control" >
+                  
+                  <label class="form-label">Lenguage</label>
+                  <input id="user-lenguage" #lenguage  lenguage="lenguage"placeholder="User lenguage" class="form-control" >
+                  
+                  <label class="form-label">Redes</label>
+                  <input id="user-redes" #redes  redes="redes" placeholder="User redes" class="form-control" >
 
                   <div class="col-12">
-                    <div class="row">
-                   
-                      <div class="col-sm-3 col-md-6">
-              
-                        <button  id="btnv" (click)="add(name.value,email.value,getSelectedItem())"type="button" class="btn btn-outline-success"><img src="https://icons.iconarchive.com/icons/icojam/blue-bits/48/user-check-icon.png" alt="delete_image">Validar</button>
-               
-                      </div>
-                      <div class="col-sm-9 col-md-6">
-                        <button   id="btnv"  (click)="clear()"type="button" class="btn btn-outline-success"><img src="https://icons.iconarchive.com/icons/seanau/email/48/Clear-icon.png" alt="delete_image">Clear</button>
-                      </div>
-                </div>
+                  
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                      <label class="form-check-label" for="invalidCheck2">
+                        Agree to terms and conditions
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </form>
-        </div>
-        
-      </div>
+              </div>
+            </div>
+          </div>
+             
+                <div class="col-12">
+                  <div class="row">
+                 
+                    <div class="col-sm-3 col-md-6">
 
+                      <button   (click)="adduser(avatar.value,firstname.value,lastname.value,email.value,[''],addess.value,age.value,description.value,nacion.value,role.value,telefon.value,token.value,password.value,formacion.value,lenguage.value,redes.value)"type="button" class="btn btn-outline-success"><img src="https://icons.iconarchive.com/icons/icojam/blue-bits/48/user-check-icon.png" alt="delete_image">Validar</button>
+             
+                    </div>
+                    <div class="col-sm-9 col-md-6">
+                      <button    (click)="clear()"type="button" class="btn btn-outline-success"><img src="https://icons.iconarchive.com/icons/seanau/email/48/Clear-icon.png" alt="delete_image">Clear</button>
+
+                    </div>
+                  </div>
+
+
+
+                  
+                </div>
+        
+        
+          
+            </div>
+          
+          
+          </div>
+        </form>
+        </div>
+      </div>
       
     </div>
 
 
-    
 </body>
 </html>
